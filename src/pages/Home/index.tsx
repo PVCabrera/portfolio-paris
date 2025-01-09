@@ -23,7 +23,7 @@ export default function Home() {
         <div className="m-auto flex max-w-[400px]">
           <img
             src={parisprof}
-            alt="Paris Cabrera"
+            alt="Paris Cabrera Headshot"
             className="rounded-lg w-full"
           />
         </div>
