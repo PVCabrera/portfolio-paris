@@ -1,4 +1,4 @@
-import Globe from "../../components/globe/globe";
+import Globe from "../../components/globe/Globe";
 
 import parisprof from "../../assets/profile/parisprof.jpg";
 import lego from "../../assets/textsvg/lego.svg";
