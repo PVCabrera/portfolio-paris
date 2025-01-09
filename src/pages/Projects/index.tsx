@@ -1,6 +1,6 @@
 export default function Projects() {
     return (
-      <div className="flex h-screen justify-center items-center overflow-hidden">
+      <div className="flex max-sm:mx-4 h-screen justify-center items-center overflow-hidden">
         <div className="text-center">
           <h1 className="text-4xl">Projects</h1>
           <p className="text-lg mt-4">

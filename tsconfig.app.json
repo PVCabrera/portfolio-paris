@@ -22,5 +22,12 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  /* Custom paths for the app */
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["src/*"],
+    "@components/*": ["components/*"],
+    "@pages/*": ["pages/*"]
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/**/*.tsx"],
 }

@@ -1,25 +1,26 @@
 import React, { useRef, useEffect, useMemo } from "react";
+
+import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import * as THREE from "three";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import helvetikerFont from "three/examples/fonts/helvetiker_regular.typeface.json";
 import { SVGLoader } from "three/addons/loaders/SVGLoader.js";
 
 // Logo imports
-import reactLogo from "../../assets/logos/reactLogo.svg";
-import jsLogo from "../../assets/logos/jsLogo.png";
-import nodeLogo from "../../assets/logos/nodeLogo.svg";
-import csharpLogo from "../../assets/logos/csharpLogo.svg";
-import dotnetLogo from "../../assets/logos/dotnetLogo.svg";
-import githubLogo from "../../assets/logos/githubLogo.svg";
-import htmlLogo from "../../assets/logos/htmlLogo.svg";
-import npmLogo from "../../assets/logos/npmLogo.svg";
-import tailwindLogo from "../../assets/logos/tailwindLogo.svg";
-import azureLogo from "../../assets/logos/azureLogo.svg";
-import typescriptLogo from "../../assets/logos/typescriptLogo.svg";
-import gitLogo from "../../assets/logos/gitLogo.svg";
+import reactLogo from "@/assets/logos/reactLogo.svg";
+import jsLogo from "@/assets/logos/jsLogo.png";
+import nodeLogo from "@/assets/logos/nodeLogo.svg";
+import csharpLogo from "@/assets/logos/csharpLogo.svg";
+import dotnetLogo from "@/assets/logos/dotnetLogo.svg";
+import githubLogo from "@/assets/logos/githubLogo.svg";
+import htmlLogo from "@/assets/logos/htmlLogo.svg";
+import npmLogo from "@/assets/logos/npmLogo.svg";
+import tailwindLogo from "@/assets/logos/tailwindLogo.svg";
+import azureLogo from "@/assets/logos/azureLogo.svg";
+import typescriptLogo from "@/assets/logos/typescriptLogo.svg";
+import gitLogo from "@/assets/logos/gitLogo.svg";
 
 
 interface Item {
@@ -56,50 +57,6 @@ const generateSpherePositions = (count: number, radius: number): [number, number
 };
 
 // Helper function to load textures or SVGs
-// const loadLogo = (logo: string, ref: React.RefObject<THREE.Group>, maxWidth: number) => {
-//   if (logo.endsWith(".svg")) {
-//     new SVGLoader().load(
-//       logo,
-//       (data) => {
-//         const group = new THREE.Group();
-//         data.paths.forEach((path) => {
-//           const material = new THREE.MeshBasicMaterial({ color: path.color || 0xffffff, transparent: true, side: THREE.DoubleSide });
-//           const shapes = SVGLoader.createShapes(path);
-//           shapes.forEach((shape) => {
-//             const geometry = new THREE.ShapeGeometry(shape);
-//             group.add(new THREE.Mesh(geometry, material));
-//           });
-//         });
-
-//         const box = new THREE.Box3().setFromObject(group);
-//         const size = new THREE.Vector3();
-//         box.getSize(size);
-//         const scale = Math.min(maxWidth / size.x, maxWidth / size.y);
-//         group.scale.set(scale, scale, scale);
-
-//         ref.current?.add(group);
-//       },
-//       undefined,
-//       (error) => console.error("Error loading SVG:", error)
-//     );
-//   } else {
-//     new THREE.TextureLoader().load(logo, (texture) => {
-//       const geometry = new THREE.PlaneGeometry(1, 1);
-//       const material = new THREE.MeshBasicMaterial({
-//         map: texture,
-//         transparent: true,
-//         side: THREE.DoubleSide
-//       });
-
-//       const aspectRatio = texture.image.width / texture.image.height;
-//       const width = Math.min(maxWidth, maxWidth * aspectRatio);
-//       const height = width / aspectRatio;
-//       const mesh = new THREE.Mesh(geometry, material);
-//       mesh.scale.set(width, height, 1);
-//       ref.current?.add(mesh);
-//     });
-//   }
-// };
 const loadLogo = (logo: string, ref: React.RefObject<THREE.Group>, size: number) => {
   if (logo.endsWith(".svg")) {
     new SVGLoader().load(

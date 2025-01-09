@@ -1,12 +1,12 @@
-import "./App.css";
+import "@/App.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
 
-import Home from "./pages/Home/index";
-import Contact from "./pages/Contact/index";
-import Projects from "./pages/Projects/index";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 
 function App() {
   return (

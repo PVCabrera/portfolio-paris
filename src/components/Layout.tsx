@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();  // Get current location
+
+  // Function to determine if a link is active
+  const isActive = (path: string) => location.pathname === path ? 'text-white' : 'text-blue-500';
+
   return (
     <div>
       {/* Navigation Bar */}
@@ -9,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <h1 className="text-xl">
             <Link
               to="/"
-              className="text-blue-500 hover:underline hover:text-white"
+              className={`${isActive('/')} hover:underline`}
             >
               Home
             </Link>
@@ -17,7 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <h1 className="text-xl">
             <Link
               to="/contact"
-              className="text-blue-500 hover:underline hover:text-white"
+              className={`${isActive('/contact')} hover:underline`}
             >
               Contact
             </Link>
@@ -25,7 +30,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <h1 className="text-xl">
             <Link
               to="/projects"
-              className="text-blue-500 hover:underline hover:text-white"
+              className={`${isActive('/projects')} hover:underline`}
             >
               Projects
             </Link>
@@ -33,7 +38,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </nav>
       {/* Page Content */}
-      <div className="pt-24">{children}</div> {/* Push content below navbar */}
+      <div className="pt-36 mb-16">{children}</div>
     </div>
   );
 };
