@@ -6,7 +6,7 @@ export default function Projects() {
           <p className="text-lg mt-4">
             This is a collection of projects that I have worked on. You can find more of my work on my
             <a
-              href=""
+              href="https://github.com/PVCabrera"
                 className="text-blue-500"
             >
                 {" GitHub"}

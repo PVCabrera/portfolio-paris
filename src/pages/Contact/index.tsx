@@ -1,4 +1,4 @@
-import linkedin from "../../assets/textsvg/linkedin.svg";
+import linkedin from "../../assets/svg-vectors/linkedin.svg";
 
 export default function Contact() {
   return (
