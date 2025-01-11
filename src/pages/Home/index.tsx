@@ -2,7 +2,7 @@ import Globe from "../../components/globe/Globe";
 
 import parisprof from "@/assets/profile/parisprof.jpg";
 import lego from "@/assets/svg-vectors/lego.svg";
-import resume from "@/assets/profile/resume.png";
+import resume from "@/assets/profile/resume.svg";
 
 export default function Home() {
   let radius = 5.5;
@@ -64,11 +64,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex p-6 bg-stone-800 rounded-lg m-10 pb-20 px-10">
-          <div className="mt-12 lg:space-x-10">
-            <h4 className="lg:text-6xl text-4xl font-serif mb-6 lg:ml-10">{`My Resume`}</h4>
-            <img src={resume} alt="Paris Cabrera Resume" className="lg:max-w-[65vw]" />
+        <div className="flex flex-col px-20 bg-stone-800 rounded-lg lg:m-16 m-auto mt-10 pb-20 px-10">
+          <div className="mt-12 flex justify-start">
+            <h4 className="lg:text-6xl text-4xl font-serif mb-6">{`My Resume`}</h4>
           </div>
+            <div className="bg-white m-auto rounded-lg">
+              <img src={resume} alt="Paris Cabrera Resume" className="md:w-[70vw] sm:w-full" />
+            </div>
         </div>
       </div>
     </>
