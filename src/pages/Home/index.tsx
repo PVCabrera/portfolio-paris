@@ -1,8 +1,8 @@
 import Globe from "../../components/globe/Globe";
+import ResumeViewer from "../../components/resume/ResumeViewer";
 
 import parisprof from "@/assets/profile/parisprof.jpg";
 import lego from "@/assets/svg-vectors/lego.svg";
-import resume from "@/assets/profile/resume.svg";
 
 export default function Home() {
   let radius = 5.5;
@@ -30,7 +30,7 @@ export default function Home() {
                 className="rounded-lg w-full"
               />
             </div>
-            <div className="mt-14">
+            <div className="mt-14 mb-6">
               <h2 className="text-2xl mt-4 leading-9">
                 I am a
                 <span>
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
 
           {/* Technologies Globe Component */}
-          <div className="relative flex md:w-3/5">
+          <div className="relative flex md:w-3/5 mb-5">
             <Globe radius={radius} />
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 lg:px-4 px-10 w-full">
               <h3 className="text-white lg:text-5xl text-3xl">
@@ -64,12 +64,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col px-20 bg-stone-800 rounded-lg lg:m-16 m-auto mt-10 pb-20 px-10">
+        <div className="flex flex-col bg-stone-700 p-6 rounded-lg">
           <div className="mt-12 flex justify-start">
             <h4 className="lg:text-6xl text-4xl font-serif mb-6">{`My Resume`}</h4>
           </div>
-            <div className="bg-white m-auto rounded-lg">
-              <img src={resume} alt="Paris Cabrera Resume" className="md:w-[70vw] sm:w-full" />
+            <div className="bg-white">
+              <ResumeViewer />
             </div>
         </div>
       </div>
