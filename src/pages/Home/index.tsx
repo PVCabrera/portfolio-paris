@@ -12,8 +12,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="container lg:mx-auto md:px-4 w-full">
-        <div className="md:flex">
+      <div className="container lg:mx-auto">
+        <div className="md:flex ">
           <div className="xl:w-1/3 w-3/4 flex-col m-auto">
             <h1 className="text-4xl mb-6">
               My name is
@@ -64,13 +64,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col bg-stone-700 p-6 rounded-lg">
-          <div className="mt-12 flex justify-start">
+        <div className="bg-stone-700 p-6 rounded-lg mx-10 lg:mt-10">
+          <div className="mt-12 flex flex-col">
             <h4 className="lg:text-6xl text-4xl font-serif mb-6">{`My Resume`}</h4>
-          </div>
-            <div className="bg-white">
               <ResumeViewer />
-            </div>
+          </div>
         </div>
       </div>
     </>
